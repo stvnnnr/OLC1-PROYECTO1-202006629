@@ -33,6 +33,7 @@ public class interfaz extends javax.swing.JFrame {
     public static String pathEntrada = "";
     parser sintactico;
     private static final long serialVersionUID = 1L;
+    private JFileChooser fileChooser;
 
     public interfaz() {
         initComponents();
@@ -42,28 +43,25 @@ public class interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        verBox = new javax.swing.JComboBox<>();
         archivoTextArea = new java.awt.TextArea();
         archivoNombre = new java.awt.Label();
         generarBoton = new java.awt.Button();
         analizarBoton = new java.awt.Button();
         label2 = new java.awt.Label();
         consola = new java.awt.TextArea();
-        imagenPanel = new java.awt.Panel();
-        anteriorBoton = new java.awt.Button();
-        siguienteBoton = new java.awt.Button();
-        arbolesBox = new javax.swing.JComboBox<>();
+        afdBoton = new java.awt.Button();
         archivoBox = new javax.swing.JComboBox<>();
-        siguientesBox = new javax.swing.JComboBox<>();
-        transicionesBox = new javax.swing.JComboBox<>();
-        automatasBox = new javax.swing.JComboBox<>();
+        afndBoton = new java.awt.Button();
+        salidasBoton = new java.awt.Button();
+        arbolBoton = new java.awt.Button();
+        siguientesBoton = new java.awt.Button();
+        errorBoton = new java.awt.Button();
+        transBoton1 = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
-
-        verBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ver", "Arboles", "Siguientes", "Transiciones", "Automatas" }));
 
         archivoNombre.setBackground(new java.awt.Color(255, 255, 204));
         archivoNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -93,38 +91,14 @@ public class interfaz extends javax.swing.JFrame {
         label2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         label2.setText("Consola");
 
-        imagenPanel.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout imagenPanelLayout = new javax.swing.GroupLayout(imagenPanel);
-        imagenPanel.setLayout(imagenPanelLayout);
-        imagenPanelLayout.setHorizontalGroup(
-            imagenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        imagenPanelLayout.setVerticalGroup(
-            imagenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        anteriorBoton.setBackground(new java.awt.Color(255, 255, 255));
-        anteriorBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        anteriorBoton.setLabel("Anterior");
-        anteriorBoton.addActionListener(new java.awt.event.ActionListener() {
+        afdBoton.setBackground(new java.awt.Color(255, 255, 255));
+        afdBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        afdBoton.setLabel("AFD");
+        afdBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                anteriorBotonActionPerformed(evt);
+                afdBotonActionPerformed(evt);
             }
         });
-
-        siguienteBoton.setBackground(new java.awt.Color(255, 255, 255));
-        siguienteBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        siguienteBoton.setLabel("Siguiente");
-        siguienteBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                siguienteBotonActionPerformed(evt);
-            }
-        });
-
-        arbolesBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arboles" }));
 
         archivoBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Archivo", "Abrir", "Guardar", "Guardar Como" }));
         archivoBox.addActionListener(new java.awt.event.ActionListener() {
@@ -133,11 +107,59 @@ public class interfaz extends javax.swing.JFrame {
             }
         });
 
-        siguientesBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tabla de Siguientes" }));
+        afndBoton.setBackground(new java.awt.Color(255, 255, 255));
+        afndBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        afndBoton.setLabel("AFND");
+        afndBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afndBotonActionPerformed(evt);
+            }
+        });
 
-        transicionesBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tabla de Transiciones" }));
+        salidasBoton.setBackground(new java.awt.Color(255, 255, 255));
+        salidasBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        salidasBoton.setLabel("Salidas");
+        salidasBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salidasBotonActionPerformed(evt);
+            }
+        });
 
-        automatasBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Automatas" }));
+        arbolBoton.setBackground(new java.awt.Color(255, 255, 255));
+        arbolBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        arbolBoton.setLabel("Arboles");
+        arbolBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arbolBotonActionPerformed(evt);
+            }
+        });
+
+        siguientesBoton.setBackground(new java.awt.Color(255, 255, 255));
+        siguientesBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        siguientesBoton.setLabel("Siguientes");
+        siguientesBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                siguientesBotonActionPerformed(evt);
+            }
+        });
+
+        errorBoton.setBackground(new java.awt.Color(255, 255, 255));
+        errorBoton.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        errorBoton.setLabel("Errores");
+        errorBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                errorBotonActionPerformed(evt);
+            }
+        });
+
+        transBoton1.setBackground(new java.awt.Color(255, 255, 255));
+        transBoton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        transBoton1.setLabel("Transiciones");
+        transBoton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transBoton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,74 +174,60 @@ public class interfaz extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(archivoTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(archivoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(generarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(analizarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(75, 75, 75)
-                                        .addComponent(arbolesBox, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(86, 86, 86)
-                                        .addComponent(automatasBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(68, 68, 68)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(siguientesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(transicionesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(generarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                .addComponent(analizarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(archivoBox, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 936, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(archivoTextArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(160, 160, 160)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(verBox, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(imagenPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(anteriorBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
-                                    .addComponent(siguienteBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(afdBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(afndBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(salidasBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(arbolBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(siguientesBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(transBoton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(errorBoton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(105, 105, 105))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(archivoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(795, 795, 795)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(verBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(archivoBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(archivoBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(archivoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(imagenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(archivoTextArea, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(analizarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(generarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(siguienteBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(anteriorBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(archivoTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(arbolesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(siguientesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(transicionesBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69)
-                        .addComponent(automatasBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32)
+                        .addComponent(arbolBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(afdBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(afndBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(siguientesBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(salidasBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(transBoton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(errorBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(analizarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(generarBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -285,13 +293,9 @@ public class interfaz extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_analizarBotonActionPerformed
 
-    private void siguienteBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguienteBotonActionPerformed
+    private void afdBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afdBotonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_siguienteBotonActionPerformed
-
-    private void anteriorBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorBotonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_anteriorBotonActionPerformed
+    }//GEN-LAST:event_afdBotonActionPerformed
 
     private void archivoBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_archivoBoxActionPerformed
         if (archivoBox.getSelectedItem().equals("Abrir")) {
@@ -399,7 +403,7 @@ public class interfaz extends javax.swing.JFrame {
         int numero = 0;
         String directoryName = System.getProperty("user.dir");
 
-        File directorio = new File(directoryName + "/SALIDAS_202003919");
+        File directorio = new File(directoryName + "/SALIDAS_202006629");
         if (!directorio.exists()) {
             if (!directorio.mkdirs()) {
                 JOptionPane.showMessageDialog(null, "error al crear el directorio");
@@ -410,17 +414,17 @@ public class interfaz extends javax.swing.JFrame {
 
         File f;
         if (lista == null) {
-            f = new File(directoryName + "/SALIDAS_202003919/salida.json");
+            f = new File(directoryName + "/SALIDAS_202006629/salida.json");
 
             numero = -1;
 
         } else {
             if (lista.length == 0) {
-                f = new File(directoryName + "/SALIDAS_202003919/salida.json");
+                f = new File(directoryName + "/SALIDAS_202006629/salida.json");
                 numero = -1;
 
             } else {
-                f = new File(directoryName + "/SALIDAS_202003919/salida" + lista.length + ".json");
+                f = new File(directoryName + "/SALIDAS_202006629/salida" + lista.length + ".json");
                 numero = lista.length;
             }
         }
@@ -435,6 +439,30 @@ public class interfaz extends javax.swing.JFrame {
         } catch (IOException ex) {
         }
     }//GEN-LAST:event_generarBotonActionPerformed
+
+    private void afndBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afndBotonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_afndBotonActionPerformed
+
+    private void salidasBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidasBotonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_salidasBotonActionPerformed
+
+    private void arbolBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arbolBotonActionPerformed
+
+    }//GEN-LAST:event_arbolBotonActionPerformed
+
+    private void siguientesBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguientesBotonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_siguientesBotonActionPerformed
+
+    private void errorBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_errorBotonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_errorBotonActionPerformed
+
+    private void transBoton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transBoton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transBoton1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -470,20 +498,19 @@ public class interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button afdBoton;
+    private java.awt.Button afndBoton;
     private java.awt.Button analizarBoton;
-    private java.awt.Button anteriorBoton;
-    private javax.swing.JComboBox<String> arbolesBox;
+    private java.awt.Button arbolBoton;
     private javax.swing.JComboBox<String> archivoBox;
     private java.awt.Label archivoNombre;
     private java.awt.TextArea archivoTextArea;
-    private javax.swing.JComboBox<String> automatasBox;
     private java.awt.TextArea consola;
+    private java.awt.Button errorBoton;
     private java.awt.Button generarBoton;
-    private java.awt.Panel imagenPanel;
     private java.awt.Label label2;
-    private java.awt.Button siguienteBoton;
-    private javax.swing.JComboBox<String> siguientesBox;
-    private javax.swing.JComboBox<String> transicionesBox;
-    private javax.swing.JComboBox<String> verBox;
+    private java.awt.Button salidasBoton;
+    private java.awt.Button siguientesBoton;
+    private java.awt.Button transBoton1;
     // End of variables declaration//GEN-END:variables
 }

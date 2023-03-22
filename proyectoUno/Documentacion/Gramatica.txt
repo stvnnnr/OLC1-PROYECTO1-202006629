@@ -1,0 +1,82 @@
+SIMBOLO INICIAL = { <INICIO> }
+
+TERMINALES = 	{ LLAVE1, LLAVE2, PUNTOCOMA, CONJ1, 
+				  DOSPUNTOS, ID, FLECHA, GUIONC, 
+				  CARACTER, ENTERO, LETRA, CADENA,
+				  KLEENE, OR1, POSITIVE1, OPTIONAL1,
+				  COMILLA1, COMILLA2, SEPARADOR }
+
+NO TERMINALES = { <INICIO>, <INSTRUCCIONES>, <INSTRUCCION>,
+				  <INSTRUCCIO2>, <CONJUNTOS>, <IDENTIFICATOR>,
+				  <SEPARADORES1>, <VAR_CONJ>, <CHAAR>, <VAR_CONJ2>,
+				  <MAS_CAR>, <IDENTIFICATOR3>, <IDENTIFICATOR2>, <REG_EXP>,
+				  <LISTA_EXP>, <MAS_EXP_POL>, <EXP_POL>, <EXP_CONJ2>, 
+				  <EXP_CONJ>, <DEF_EXP> }
+
+PRODUCCIONES = {
+				<INICIO>::=	<INTRUCCIONES>
+
+				<INSTRUCCIONES>::=	LLAVE1 <INTRUCCION><INTRUCCION2> LLAVE2 |
+									error PUNTOCOMA |
+									error LLAVE2
+										
+
+				<INSTRUCCIO2>::=	<INTRUCCION><INTRUCCION2>|  
+									LLAVE2
+
+				<INSTRUCCION>::=	<CONJUNTOS> |
+									<IDENTIFICATOR> |
+									<SEPARADORES1>
+				----------------------------------------------------------------
+				<CONJUNTOS>::= CONJ1 DOSPUNTOS ID FLECHA <VAR_CONJ>
+
+				<VAR_CONJ>::<CHAAR><VAR_CONJ2>	
+
+				<VAR_CONJ2>::= 	 GUIONC <CHAAR> PUNTOCOMA|
+								<MAS_CAR>
+						
+				<CHARR>::=	CARACTER |
+							ENTERO	 |
+							LETRA	 |
+							PUNTOCOMA|
+							DOSPUNTOS
+
+
+				<MAS_CAR>::= 	COMA <CHAAR><MAS_CAR>|
+								PUNTOCOMA
+				----------------------------------------------------------------
+				<IDENTIFICATOR>::=	<IDENTIFICATOR3> <IDENTIFICATOR2>
+
+				<IDENTIFICATOR3>::=	ID|
+									LETRA
+									
+				<IDENTIFICATOR2>::=	<REG_EXP> |
+									<LISTA_EXP>
+				----------------------------------------------------------------
+				<REG_EXP>::=	FLECHA <MAS_EXP_POL>
+
+				<MAS_EXP_POL>::=	<EXP_POL> <MAS_EXP_POL>	|
+									PUNTOCOMA
+							
+				<EXP_POL>::=	CONCAT1    |
+								CADENA	   | 
+								KLEENE     |
+								OR1        |
+								POSITIVE1  |
+								OPTIONAL1  |
+								COMILLA1   |
+								COMILLA2   |
+								<EXP_CONJ> 
+
+				<EXP_CONJ>::=	LLAVE1 <EXP_CONJ2> LLAVE2
+
+				<EXP_CONJ2>::=	ID |
+								LETRA
+				----------------------------------------------------------------
+				<LISTA_EXP>::=	DOSPUNTOS <DEF_EXP>
+				<DEF_EXP>::= 	CADENA PUNTOCOMA;
+				----------------------------------------------------------------
+				<SEPARADORES1>::= SEPARADOR
+				----------------------------------------------------------------
+					
+}

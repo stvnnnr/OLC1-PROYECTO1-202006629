@@ -1,1 +1,10 @@
-CONJ
+{
+CONJ:letra->a~z;
+CONJ:digito->0~9; 
+
+ExpReg1->..{letra}*|{letra}{digito}{digito};
+
+%%
+
+ExpReg1:"pr0b4nd0";
+}
