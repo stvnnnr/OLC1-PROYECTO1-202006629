@@ -449,7 +449,10 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_salidasBotonActionPerformed
 
     private void arbolBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arbolBotonActionPerformed
-
+        try {
+            Runtime.getRuntime().exec("C:\\Windows\\System32\\cmd.exe /K start D:\\SEPTIMO SEMESTRE\\Compi 1\\OLC1-PROYECTO1-202006629\\proyectoUno");
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_arbolBotonActionPerformed
 
     private void siguientesBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siguientesBotonActionPerformed
