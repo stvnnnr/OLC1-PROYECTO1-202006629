@@ -1,0 +1,23 @@
+digraph arbol {
+n4[label="digito\n1\n1\n1"]
+n3[label="+\n1\n1\n"]
+n6[label=".\n2\n2\n2"]
+n8[label="digito\n3\n3\n3"]
+n7[label="+\n3\n3\n"]
+n5[label=".\n2\n3\n"]
+n2[label=".\n1\n3\n"]
+n9[label="#\n4\n4\n4"]
+n1[label=".\n1\n4\n"]
+n3-> n4
+n7-> n8
+n5-> n6
+n5-> n7
+n2-> n3
+n2-> n5
+n1-> n2
+n1-> n9
+n_anulable [label="anulable" color="red" fontcolor="red"]
+n_ejemplo[label="lexema\nprimeros\nultimos\nid (hojas)"]
+n_identificador [label="decimales"]
+
+}

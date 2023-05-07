@@ -1,0 +1,47 @@
+digraph arbol {
+n3[label="C\n1\n1\n1"]
+n5[label="O\n2\n2\n2"]
+n7[label="M\n3\n3\n3"]
+n9[label="P\n4\n4\n4"]
+n11[label="I\n5\n5\n5"]
+n13[label="1\n6\n6\n6"]
+n18[label="letra\n7\n7\n7"]
+n19[label="digito\n8\n8\n8"]
+n17[label="|\n7 ,8\n7 ,8\n"]
+n20[label=" \n9\n9\n9"]
+n16[label="|\n7 ,8 ,9\n7 ,8 ,9\n"]
+n15[label="+\n7 ,8 ,9\n7 ,8 ,9\n"]
+n14[label="?\n7 ,8 ,9\n7 ,8 ,9\n" color="red" fontcolor="red"]
+n12[label=".\n6\n6 ,7 ,8 ,9\n"]
+n10[label=".\n5\n6 ,7 ,8 ,9\n"]
+n8[label=".\n4\n6 ,7 ,8 ,9\n"]
+n6[label=".\n3\n6 ,7 ,8 ,9\n"]
+n4[label=".\n2\n6 ,7 ,8 ,9\n"]
+n2[label=".\n1\n6 ,7 ,8 ,9\n"]
+n21[label="#\n10\n10\n10"]
+n1[label=".\n1\n10\n"]
+n17-> n18
+n17-> n19
+n16-> n17
+n16-> n20
+n15-> n16
+n14-> n15
+n12-> n13
+n12-> n14
+n10-> n11
+n10-> n12
+n8-> n9
+n8-> n10
+n6-> n7
+n6-> n8
+n4-> n5
+n4-> n6
+n2-> n3
+n2-> n4
+n1-> n2
+n1-> n21
+n_anulable [label="anulable" color="red" fontcolor="red"]
+n_ejemplo[label="lexema\nprimeros\nultimos\nid (hojas)"]
+n_identificador [label="frase"]
+
+}

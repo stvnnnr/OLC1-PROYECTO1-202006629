@@ -1,0 +1,63 @@
+digraph arbol {
+n4[label="minuscula\n1\n1\n1"]
+n5[label="mayuscula\n2\n2\n2"]
+n3[label="|\n1 ,2\n1 ,2\n"]
+n11[label="simbolos\n3\n3\n3"]
+n12[label="minuscula\n4\n4\n4"]
+n10[label="|\n3 ,4\n3 ,4\n"]
+n13[label="mayuscula\n5\n5\n5"]
+n9[label="|\n3 ,4 ,5\n3 ,4 ,5\n"]
+n14[label="numero\n6\n6\n6"]
+n8[label="|\n3 ,4 ,5 ,6\n3 ,4 ,5 ,6\n"]
+n7[label="+\n3 ,4 ,5 ,6\n3 ,4 ,5 ,6\n"]
+n16[label="@\n7\n7\n7"]
+n20[label="minuscula\n8\n8\n8"]
+n21[label="mayuscula\n9\n9\n9"]
+n19[label="|\n8 ,9\n8 ,9\n"]
+n18[label="+\n8 ,9\n8 ,9\n"]
+n23[label=".\n10\n10\n10"]
+n25[label="c\n11\n11\n11"]
+n27[label="o\n12\n12\n12"]
+n28[label="m\n13\n13\n13"]
+n26[label=".\n12\n13\n"]
+n24[label=".\n11\n13\n"]
+n22[label=".\n10\n13\n"]
+n17[label=".\n8 ,9\n13\n"]
+n15[label=".\n7\n13\n"]
+n6[label=".\n3 ,4 ,5 ,6\n13\n"]
+n2[label=".\n1 ,2\n13\n"]
+n29[label="#\n14\n14\n14"]
+n1[label=".\n1 ,2\n14\n"]
+n3-> n4
+n3-> n5
+n10-> n11
+n10-> n12
+n9-> n10
+n9-> n13
+n8-> n9
+n8-> n14
+n7-> n8
+n19-> n20
+n19-> n21
+n18-> n19
+n26-> n27
+n26-> n28
+n24-> n25
+n24-> n26
+n22-> n23
+n22-> n24
+n17-> n18
+n17-> n22
+n15-> n16
+n15-> n17
+n6-> n7
+n6-> n15
+n2-> n3
+n2-> n6
+n1-> n2
+n1-> n29
+n_anulable [label="anulable" color="red" fontcolor="red"]
+n_ejemplo[label="lexema\nprimeros\nultimos\nid (hojas)"]
+n_identificador [label="correoElectronico"]
+
+}

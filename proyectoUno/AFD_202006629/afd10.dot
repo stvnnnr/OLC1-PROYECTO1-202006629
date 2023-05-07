@@ -1,0 +1,35 @@
+digraph AFD{
+rankdir=LR;
+nFlecha [label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="correoElectronico"]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=circle]
+n2 [label="S2" shape=circle]
+n3 [label="S3" shape=circle]
+n4 [label="S4" shape=circle]
+n5 [label="S5" shape=circle]
+n6 [label="S6" shape=circle]
+n7 [label="S7" shape=circle]
+n8 [label="S8" shape=doublecircle]
+nFlecha->n0
+n0->n1[label="minuscula"];
+n0->n1[label="mayuscula"];
+n1->n2[label="minuscula"];
+n1->n2[label="mayuscula"];
+n1->n2[label="simbolos"];
+n1->n2[label="numero"];
+n2->n2[label="minuscula"];
+n2->n2[label="mayuscula"];
+n2->n2[label="simbolos"];
+n2->n2[label="numero"];
+n2->n3[label="@"];
+n3->n4[label="minuscula"];
+n3->n4[label="mayuscula"];
+n4->n4[label="minuscula"];
+n4->n4[label="mayuscula"];
+n4->n5[label="."];
+n5->n6[label="c"];
+n6->n7[label="o"];
+n7->n8[label="m"];
+
+}

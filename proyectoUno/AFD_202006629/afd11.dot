@@ -1,0 +1,33 @@
+digraph AFD{
+rankdir=LR;
+nFlecha [label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="url"]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=circle]
+n2 [label="S2" shape=circle]
+n3 [label="S3" shape=circle]
+n4 [label="S4" shape=circle]
+n5 [label="S5" shape=circle]
+n6 [label="S6" shape=circle]
+n7 [label="S7" shape=circle]
+n8 [label="S8" shape=circle]
+n9 [label="S9" shape=circle]
+n10 [label="S10" shape=circle]
+n11 [label="S11" shape=doublecircle]
+nFlecha->n0
+n0->n1[label="h"];
+n1->n2[label="t"];
+n2->n3[label="t"];
+n3->n4[label="p"];
+n4->n5[label="s"];
+n4->n6[label=":"];
+n5->n6[label=":"];
+n6->n7[label="/"];
+n7->n8[label="/"];
+n8->n9[label="minuscula"];
+n9->n9[label="minuscula"];
+n9->n10[label="."];
+n10->n11[label="minuscula"];
+n11->n11[label="minuscula"];
+
+}

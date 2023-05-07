@@ -1,0 +1,45 @@
+digraph AFND{
+rankdir=LR;
+nFlecha[label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="url"];
+n12 [label="S12" shape=circle]
+n13 [label="S13" shape=circle]
+n14 [label="S14" shape=circle]
+n15 [label="S15" shape=circle]
+n5 [label="S5" shape=circle]
+n6 [label="S6" shape=circle]
+n7 [label="S7" shape=circle]
+n8 [label="S8" shape=circle]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=circle]
+n2 [label="S2" shape=circle]
+n3 [label="S3" shape=doublecircle]
+n9 [label="S9" shape=circle]
+n10 [label="S10" shape=circle]
+n16 [label="S16" shape=circle]
+n17 [label="S17" shape=circle]
+n18 [label="S18" shape=circle]
+n19 [label="S19" shape=circle]
+n12->n13[label="EPSILON"];
+n12->n15[label="EPSILON"];
+n13->n14[label="s"];
+n14->n15[label="EPSILON"];
+n15->n10[label=":"];
+n5->n6[label="EPSILON"];
+n6->n7[label="minuscula"];
+n7->n8[label="EPSILON"];
+n7->n6[label="EPSILON"];
+n8->n0[label="."];
+n0->n1[label="EPSILON"];
+n1->n2[label="minuscula"];
+n2->n3[label="EPSILON"];
+n2->n1[label="EPSILON"];
+n9->n5[label="/"];
+n10->n9[label="/"];
+n16->n12[label="p"];
+n17->n16[label="t"];
+n18->n17[label="t"];
+nFlecha->n19
+n19->n18[label="h"];
+
+}

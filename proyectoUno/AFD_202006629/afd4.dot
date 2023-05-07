@@ -1,0 +1,23 @@
+digraph AFD{
+rankdir=LR;
+nFlecha [label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="frase"]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=circle]
+n2 [label="S2" shape=circle]
+n3 [label="S3" shape=circle]
+n4 [label="S4" shape=circle]
+n5 [label="S5" shape=circle]
+n6 [label="S6" shape=doublecircle]
+nFlecha->n0
+n0->n1[label="C"];
+n1->n2[label="O"];
+n2->n3[label="M"];
+n3->n4[label="P"];
+n4->n5[label="I"];
+n5->n6[label="1"];
+n6->n6[label="letra"];
+n6->n6[label="digito"];
+n6->n6[label=" "];
+
+}

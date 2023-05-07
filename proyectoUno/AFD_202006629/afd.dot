@@ -1,0 +1,13 @@
+digraph AFD{
+rankdir=LR;
+nFlecha [label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="identificador"]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=doublecircle]
+nFlecha->n0
+n0->n1[label="abecedarioMinus"];
+n1->n1[label="abecedarioMinus"];
+n1->n1[label="_"];
+n1->n1[label="digito"];
+
+}

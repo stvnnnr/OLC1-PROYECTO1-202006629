@@ -1,0 +1,1 @@
+[{"ExpresionRegular":"identificador","Resultado":"Cadena Valida","Valor":"soy_un_id_1"},{"ExpresionRegular":"identificador","Resultado":"Cadena Valida","Valor":"ComPi1"},{"ExpresionRegular":"decimales","Resultado":"Cadena Invalida","Valor":"301.59"},{"ExpresionRegular":"decimales","Resultado":"Cadena Valida","Valor":"1505.55"}]

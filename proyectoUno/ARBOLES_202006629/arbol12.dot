@@ -1,0 +1,57 @@
+digraph arbol {
+n3[label="h\n1\n1\n1"]
+n5[label="t\n2\n2\n2"]
+n7[label="t\n3\n3\n3"]
+n9[label="p\n4\n4\n4"]
+n12[label="s\n5\n5\n5"]
+n11[label="?\n5\n5\n" color="red" fontcolor="red"]
+n14[label=":\n6\n6\n6"]
+n16[label="/\n7\n7\n7"]
+n18[label="/\n8\n8\n8"]
+n21[label="minuscula\n9\n9\n9"]
+n20[label="+\n9\n9\n"]
+n23[label=".\n10\n10\n10"]
+n25[label="minuscula\n11\n11\n11"]
+n24[label="+\n11\n11\n"]
+n22[label=".\n10\n11\n"]
+n19[label=".\n9\n11\n"]
+n17[label=".\n8\n11\n"]
+n15[label=".\n7\n11\n"]
+n13[label=".\n6\n11\n"]
+n10[label=".\n5 ,6\n11\n"]
+n8[label=".\n4\n11\n"]
+n6[label=".\n3\n11\n"]
+n4[label=".\n2\n11\n"]
+n2[label=".\n1\n11\n"]
+n26[label="#\n12\n12\n12"]
+n1[label=".\n1\n12\n"]
+n11-> n12
+n20-> n21
+n24-> n25
+n22-> n23
+n22-> n24
+n19-> n20
+n19-> n22
+n17-> n18
+n17-> n19
+n15-> n16
+n15-> n17
+n13-> n14
+n13-> n15
+n10-> n11
+n10-> n13
+n8-> n9
+n8-> n10
+n6-> n7
+n6-> n8
+n4-> n5
+n4-> n6
+n2-> n3
+n2-> n4
+n1-> n2
+n1-> n26
+n_anulable [label="anulable" color="red" fontcolor="red"]
+n_ejemplo[label="lexema\nprimeros\nultimos\nid (hojas)"]
+n_identificador [label="url"]
+
+}

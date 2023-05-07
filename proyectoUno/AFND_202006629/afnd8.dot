@@ -1,0 +1,50 @@
+digraph AFND{
+rankdir=LR;
+nFlecha[label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="frase"];
+n12 [label="S12" shape=circle]
+n13 [label="S13" shape=doublecircle]
+n10 [label="S10" shape=circle]
+n11 [label="S11" shape=circle]
+n6 [label="S6" shape=circle]
+n7 [label="S7" shape=circle]
+n8 [label="S8" shape=circle]
+n9 [label="S9" shape=circle]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=circle]
+n2 [label="S2" shape=circle]
+n3 [label="S3" shape=circle]
+n4 [label="S4" shape=circle]
+n5 [label="S5" shape=circle]
+n14 [label="S14" shape=circle]
+n15 [label="S15" shape=circle]
+n16 [label="S16" shape=circle]
+n17 [label="S17" shape=circle]
+n18 [label="S18" shape=circle]
+n19 [label="S19" shape=circle]
+n12->n10[label="EPSILON"];
+n12->n13[label="EPSILON"];
+n10->n6[label="EPSILON"];
+n11->n13[label="EPSILON"];
+n6->n7[label="EPSILON"];
+n6->n0[label="EPSILON"];
+n7->n8[label=" "];
+n8->n9[label="EPSILON"];
+n9->n11[label="EPSILON"];
+n9->n6[label="EPSILON"];
+n0->n1[label="EPSILON"];
+n0->n3[label="EPSILON"];
+n1->n2[label="letra"];
+n2->n5[label="EPSILON"];
+n3->n4[label="digito"];
+n4->n5[label="EPSILON"];
+n5->n9[label="EPSILON"];
+n14->n12[label="1"];
+n15->n14[label="I"];
+n16->n15[label="P"];
+n17->n16[label="M"];
+n18->n17[label="O"];
+nFlecha->n19
+n19->n18[label="C"];
+
+}

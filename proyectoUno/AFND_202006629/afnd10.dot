@@ -1,0 +1,79 @@
+digraph AFND{
+rankdir=LR;
+nFlecha[label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="correoElectronico"];
+n30 [label="S30" shape=circle]
+n31 [label="S31" shape=circle]
+n32 [label="S32" shape=circle]
+n33 [label="S33" shape=circle]
+n34 [label="S34" shape=circle]
+n35 [label="S35" shape=circle]
+n29 [label="S29" shape=circle]
+n24 [label="S24" shape=circle]
+n25 [label="S25" shape=circle]
+n26 [label="S26" shape=circle]
+n27 [label="S27" shape=circle]
+n20 [label="S20" shape=circle]
+n21 [label="S21" shape=circle]
+n22 [label="S22" shape=circle]
+n23 [label="S23" shape=circle]
+n14 [label="S14" shape=circle]
+n15 [label="S15" shape=circle]
+n16 [label="S16" shape=circle]
+n17 [label="S17" shape=circle]
+n18 [label="S18" shape=circle]
+n19 [label="S19" shape=circle]
+n11 [label="S11" shape=circle]
+n12 [label="S12" shape=circle]
+n5 [label="S5" shape=circle]
+n6 [label="S6" shape=circle]
+n7 [label="S7" shape=circle]
+n8 [label="S8" shape=circle]
+n9 [label="S9" shape=circle]
+n10 [label="S10" shape=circle]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=circle]
+n2 [label="S2" shape=doublecircle]
+n3 [label="S3" shape=circle]
+nFlecha->n30
+n30->n31[label="EPSILON"];
+n30->n33[label="EPSILON"];
+n31->n32[label="minuscula"];
+n32->n35[label="EPSILON"];
+n33->n34[label="mayuscula"];
+n34->n35[label="EPSILON"];
+n35->n24[label="EPSILON"];
+n29->n11[label="@"];
+n24->n25[label="EPSILON"];
+n24->n20[label="EPSILON"];
+n25->n26[label="numero"];
+n26->n27[label="EPSILON"];
+n27->n29[label="EPSILON"];
+n27->n24[label="EPSILON"];
+n20->n21[label="EPSILON"];
+n20->n14[label="EPSILON"];
+n21->n22[label="mayuscula"];
+n22->n23[label="EPSILON"];
+n23->n27[label="EPSILON"];
+n14->n15[label="EPSILON"];
+n14->n17[label="EPSILON"];
+n15->n16[label="simbolos"];
+n16->n19[label="EPSILON"];
+n17->n18[label="minuscula"];
+n18->n19[label="EPSILON"];
+n19->n23[label="EPSILON"];
+n11->n5[label="EPSILON"];
+n12->n3[label="."];
+n5->n6[label="EPSILON"];
+n5->n8[label="EPSILON"];
+n6->n7[label="minuscula"];
+n7->n10[label="EPSILON"];
+n8->n9[label="mayuscula"];
+n9->n10[label="EPSILON"];
+n10->n12[label="EPSILON"];
+n10->n5[label="EPSILON"];
+n0->n1[label="o"];
+n1->n2[label="m"];
+n3->n0[label="c"];
+
+}

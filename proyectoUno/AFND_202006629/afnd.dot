@@ -1,0 +1,36 @@
+digraph AFND{
+rankdir=LR;
+nFlecha[label="flecha" color="white" fontcolor="white"]
+nIdentificador [label="identificador"];
+n10 [label="S10" shape=circle]
+n11 [label="S11" shape=doublecircle]
+n6 [label="S6" shape=circle]
+n7 [label="S7" shape=circle]
+n8 [label="S8" shape=circle]
+n9 [label="S9" shape=circle]
+n0 [label="S0" shape=circle]
+n1 [label="S1" shape=circle]
+n2 [label="S2" shape=circle]
+n3 [label="S3" shape=circle]
+n4 [label="S4" shape=circle]
+n5 [label="S5" shape=circle]
+n12 [label="S12" shape=circle]
+n10->n6[label="EPSILON"];
+n6->n7[label="EPSILON"];
+n6->n0[label="EPSILON"];
+n6->n11[label="EPSILON"];
+n7->n8[label="_"];
+n8->n9[label="EPSILON"];
+n9->n11[label="EPSILON"];
+n9->n6[label="EPSILON"];
+n0->n1[label="EPSILON"];
+n0->n3[label="EPSILON"];
+n1->n2[label="abecedarioMinus"];
+n2->n5[label="EPSILON"];
+n3->n4[label="digito"];
+n4->n5[label="EPSILON"];
+n5->n9[label="EPSILON"];
+nFlecha->n12
+n12->n10[label="abecedarioMinus"];
+
+}
